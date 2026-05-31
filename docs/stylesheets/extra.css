@@ -1,0 +1,209 @@
+/* ==========================================
+   EL GOUNA CHURCH - PREMIUM DESIGN SYSTEM
+   Modern UI/UX & Glassmorphism Aesthetics
+   ========================================== */
+
+/* Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--md-primary-color--light, #e0e0e0);
+  border-radius: 20px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--md-accent-color);
+}
+
+/* Base Body smooth transitions for theme switches */
+body, 
+.md-header, 
+.md-sidebar, 
+.md-main, 
+.md-footer,
+.md-content {
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* PREMIUM LIGHT MODE CUSTOMIZATIONS */
+[data-md-color-scheme="default"] {
+  --md-primary-color: #3f51b5; /* Royal Indigo */
+  --md-primary-color--dark: #303f9f;
+  --md-primary-color--light: #c5cae9;
+  --md-accent-color: #ffb300; /* Spiritual Gold Amber */
+  --md-default-bg-color: #f8fafc; /* Elegant slate background */
+  --md-card-bg-color: #ffffff;
+  --md-border-color: #e2e8f0;
+  
+  /* Customized premium shadows */
+  --premium-shadow: 0 4px 20px rgba(99, 102, 241, 0.05), 0 1px 3px rgba(0, 0, 0, 0.01);
+  --premium-shadow-hover: 0 10px 30px rgba(99, 102, 241, 0.12), 0 2px 8px rgba(99, 102, 241, 0.06);
+}
+
+/* PREMIUM DARK MODE CUSTOMIZATIONS (Slate) */
+[data-md-color-scheme="slate"] {
+  --md-primary-color: #4f46e5; /* Electric Indigo */
+  --md-primary-color--dark: #3730a3;
+  --md-primary-color--light: #312e81;
+  --md-accent-color: #fbbf24; /* Golden Amber */
+  
+  /* Rich GitHub/Vercel-like deep dark slate background */
+  --md-default-bg-color: #0b0f19;
+  --md-default-fg-color: #f1f5f9;
+  --md-card-bg-color: #111827;
+  --md-border-color: #1f2937;
+  
+  /* Customized premium shadows */
+  --premium-shadow: 0 4px 20px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+  --premium-shadow-hover: 0 10px 30px rgba(99, 102, 241, 0.25), 0 2px 8px rgba(99, 102, 241, 0.1);
+}
+
+/* ==========================================
+   UI COMPONENTS & EFFECTS
+   ========================================== */
+
+/* Elegant Top Gradient Accent Bar */
+.md-header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--md-primary-color) 0%, var(--md-accent-color) 100%);
+  z-index: 10;
+}
+
+/* Glassmorphism Header */
+.md-header {
+  background-color: rgba(var(--md-primary-color-rgb, 63, 81, 181), 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+}
+
+[data-md-color-scheme="slate"] .md-header {
+  background-color: rgba(17, 24, 39, 0.8) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Navigation Tabs Enhancements */
+.md-tabs {
+  background-color: rgba(var(--md-primary-color-rgb, 63, 81, 181), 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: rgba(17, 24, 39, 0.75) !important;
+}
+
+/* Active tab modern underline indicator */
+.md-tabs__link--active {
+  color: var(--md-accent-color) !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--md-accent-color) !important;
+}
+
+/* Glowing Logo Cross Animation */
+.md-logo img, .md-logo svg {
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.3s ease;
+}
+.md-logo:hover img, .md-logo:hover svg {
+  transform: rotate(360deg) scale(1.15);
+  filter: drop-shadow(0 0 8px var(--md-accent-color));
+}
+
+/* Beautiful Blog Post Cards & Content Area */
+.md-content__inner {
+  background-color: var(--md-card-bg-color);
+  padding: 2rem 2.5rem !important;
+  border-radius: 16px;
+  border: 1px solid var(--md-border-color);
+  box-shadow: var(--premium-shadow) !important;
+}
+
+/* Smooth hover effects for cards, tags, buttons */
+.md-post, 
+.md-post--excerpt, 
+.md-tag {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.md-post--excerpt:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--premium-shadow-hover) !important;
+  border-color: var(--md-primary-color) !important;
+}
+
+.md-tag:hover {
+  background-color: var(--md-primary-color) !important;
+  color: #ffffff !important;
+  transform: scale(1.05);
+}
+
+/* Glassmorphism Admonitions / Alert Boxes */
+.md-typeset .admonition, 
+.md-typeset details {
+  border-radius: 12px !important;
+  border-left-width: 6px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+  background-color: rgba(var(--md-primary-color-rgb, 63, 81, 181), 0.03) !important;
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--md-border-color);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.md-typeset .admonition:hover {
+  transform: translateX(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Custom Admonition Colors alignment */
+.md-typeset .admonition.quote {
+  border-right: 6px solid var(--md-accent-color) !important; /* For Arabic RTL */
+  border-left-width: 1px !important;
+  background-color: rgba(251, 191, 36, 0.04) !important;
+}
+
+/* Typography & Layout Spacing */
+.md-typeset h1 {
+  font-weight: 800 !important;
+  color: var(--md-primary-color);
+  letter-spacing: -0.5px;
+  line-height: 1.4 !important;
+}
+
+.md-typeset h2 {
+  font-weight: 700 !important;
+  border-bottom: 2px solid var(--md-border-color);
+  padding-bottom: 0.5rem;
+  margin-top: 2rem !important;
+}
+
+.md-typeset p {
+  line-height: 1.8 !important;
+  font-size: 1.05rem !important;
+  color: var(--md-default-fg-color);
+}
+
+/* Back to Top button glowing effect */
+.md-top {
+  background-color: var(--md-primary-color) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.md-top:hover {
+  background-color: var(--md-accent-color) !important;
+  transform: translateY(-3px) scale(1.05);
+}

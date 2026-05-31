@@ -14,6 +14,9 @@ theme:
     - navigation.tabs
     - navigation.top
     - navigation.tracking
+    - navigation.instant
+    - navigation.instant.progress
+    - content.code.copy
     - search.suggest
     - search.highlight
     - search.share
@@ -31,6 +34,9 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
+
+extra_css:
+  - stylesheets/extra.css
 
 plugins:
   - search
