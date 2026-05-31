@@ -1,0 +1,39 @@
+site_name: El Gouna Church
+site_description: Welcome to the official website of El Gouna Church. Serving the community with love and faith.
+site_url: https://elgounachurch.github.io/
+theme:
+  name: material
+  icon:
+    logo: fontawesome/solid/cross
+    favicon: fontawesome/solid/cross
+  palette:
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Dark mode
+      primary: deep orange
+      accent: deep purple
+
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Light mode
+      primary: orange
+      accent: green
+
+plugins:
+  - search
+  - blog:
+      post_url_format: "{slug}"
+  - tags
+
+  - git-committers:
+      enabled: true
+      repository: Poula-Git/elgounachurch.github.io
+      branch: main
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: true
+      enable_creation_date: true
+      enabled: true
+
