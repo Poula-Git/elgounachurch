@@ -3,6 +3,7 @@ site_description: Welcome to the official website of El Gouna Church. Serving th
 site_url: https://elgounachurch.github.io/
 theme:
   name: material
+  language: ar
   icon:
     logo: fontawesome/solid/cross
     favicon: fontawesome/solid/cross
